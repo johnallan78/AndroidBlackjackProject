@@ -9,8 +9,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button playButton;
-    Deck deck;
-    Card card;
+    Game game;
 
 
     @Override
@@ -18,19 +17,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        deck = new Deck();
         playButton = (Button) findViewById(R.id.playGame);
 
     }
 
     public void onPlayButtonClicked(View button) {
 
-
-        int cardPic = card.getImg();
-        String string = Integer.toString(cardPic);
-
+//        int cardPic = card.getImg();
+//        String string = Integer.toString(cardPic);
+        game = new Game();
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("First Card", string);
+        intent.putExtra("First Card", game.play());
         this.startActivity(intent);
 
         Toast.makeText(this, "Let's play!", Toast.LENGTH_LONG).show();

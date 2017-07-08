@@ -36,6 +36,7 @@ public class Deck {
         cards.add(new Card(EIGHT, CLUBS, R.drawable.c8));
         cards.add(new Card(NINE, CLUBS, R.drawable.c9));
         cards.add(new Card(TEN, CLUBS, R.drawable.c10));
+        shuffle();
 
 
 

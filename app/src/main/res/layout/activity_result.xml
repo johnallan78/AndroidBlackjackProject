@@ -7,19 +7,11 @@
     tools:context="com.example.user.blackjackandroidproject.ResultActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/answer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="130dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="246dp" />
 
 </android.support.constraint.ConstraintLayout>
