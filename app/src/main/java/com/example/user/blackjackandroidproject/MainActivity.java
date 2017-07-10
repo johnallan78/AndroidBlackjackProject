@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
         String pic4 = Integer.toString(player2.showSecondCard());
         intent.putExtra("Second Card Player 2", pic4);
 
-        String player2Hand = Integer.toString(player2.playerHandValue());
-        intent.putExtra("Player 2 Hand", "Player 2 Hand: " + player2Hand);
-        Log.d("Hand value", player2.playerHandValue().toString());
+//        String player2Hand = Integer.toString(player2.playerHandValue());
+//        intent.putExtra("Player 2 Hand", "Player 2 Hand: " + player2Hand);
+//        Log.d("Hand value", player2.playerHandValue().toString());
 
         if (player1.playerHandValue() < 16)
 
