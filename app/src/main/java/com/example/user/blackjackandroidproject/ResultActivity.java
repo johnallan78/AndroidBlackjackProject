@@ -19,6 +19,7 @@ public class ResultActivity extends AppCompatActivity {
     ImageView image3;
     ImageView image4;
     ImageView image5;
+    ImageView image6;
 
 
     @Override
@@ -35,6 +36,7 @@ public class ResultActivity extends AppCompatActivity {
         image3 = (ImageView)findViewById(R.id.card3Image);
         image4 = (ImageView)findViewById(R.id.card4Image);
         image5 = (ImageView)findViewById(R.id.card5Image);
+        image6 = (ImageView)findViewById(R.id.card6Image);
 
 
         Intent intent = getIntent();
@@ -60,6 +62,11 @@ public class ResultActivity extends AppCompatActivity {
 
         int player1card3 = Integer.parseInt(extras.getString("Third Card"));
         image5.setImageResource(player1card3);
+
+        int player2card3 = Integer.parseInt(extras.getString("Third Card Player 2"));
+        image6.setImageResource(player2card3);
+
+
 
         String result = extras.getString("Result");
         finalScore.setText(result);

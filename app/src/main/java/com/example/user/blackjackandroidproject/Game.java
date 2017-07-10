@@ -19,11 +19,24 @@ public class Game {
     }
 
     public String scoreCompare(int player1Score, int player2Score) {
-        if (player1Score > player2Score) {
+
+        if (player1Score > 21 && player2Score <= 21){
+            return "Player 1 is BUST. Player 2 wins!";
+        }
+
+        else if (player1Score > 21 && player2Score > 21){
+            return "Both players are BUST!";
+        }
+        else if (player1Score <= 21 && player2Score > 21){
+            return "Player 2 is BUST. Player 1 wins.";
+        }
+        else if (player1Score > player2Score && player1Score < 21) {
             return "Player 1 Wins!";
-        } else if (player1Score == player2Score) {
-            return "A draw";
-        } else
+        }
+        else if (player2Score > player1Score && player2Score < 21) {
+            return "Player 2 Wins!";
+        }
+        else
             return "Player 2 Wins!";
     }
 }
