@@ -18,70 +18,13 @@ public class Game {
         player = new Player();
     }
 
-    int playerhand = 0;
-    int player2hand = 0;
-
-    public String showFirstCard(){
-//        for (int i = 0; i < 2; i++) { //common for loop in Java. weird but useful.
-            dealer.addCardToHand(dealer.deal());
-//        }
-            Card card = dealer.showFirstCard();
-            playerhand += card.cardValue();
-            return card.cardName();
+    public String scoreCompare(int player1Score, int player2Score) {
+        if (player1Score > player2Score) {
+            return "Player 1 Wins!";
+        } else if (player1Score == player2Score) {
+            return "A draw";
+        } else
+            return "Player 2 Wins!";
     }
-
-
-    public String showSecondCard(){
-        Card card = dealer.showSecondCard();
-        playerhand += card.cardValue();
-        return card.cardName();
-    }
-
-//    public String showFirstCardSecondPlayer(){
-//        for (int i = 0; i < 2; i++) { //common for loop in Java. weird but useful.
-//            dealer.addCardToHand(dealer.deal());
-//            player.addCardToHand(dealer.deal());
-//        }
-//        Card card = dealer.showThirdCard();
-//        player2hand += card.cardValue();
-//        return card.cardName();
-//    }
-//
-//    public String showSecondCardSecondPlayer(){
-//        Card card = dealer.showFourthCard();
-//        player2hand += card.cardValue();
-//        return card.cardName();
-//    }
-//
-//
-//    public Integer playerHandValueSecondPlayer(){
-//        return (player2hand / 2);
-//    }
-
-
-
-
-    public Integer playerHandValue(){
-        return (playerhand / 2);
-    }
-
-
-
-
-
-
-
-//    public int showFirstCard(){
-//        for (int i = 0; i < 2; i++) { //common for loop in Java. weird but useful.
-//            dealer.addCardToHand(dealer.deal());
-//            player.addCardToHand(dealer.deal());
-//        }
-//        Card card = dealer.showFirstCard();
-//        return card.getImg();
-//
-//
-//    }
-
-
 }
 

@@ -56,10 +56,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("Player 2 Hand", "Player 2 Hand:" + player2Hand);
         Log.d("Hand value", player2.playerHandValue().toString());
 
+        String result = game.scoreCompare(player1.playerHandValue(), player2.playerHandValue());
+        intent.putExtra("Result", result);
+
 
         this.startActivity(intent);
 
-//        Toast.makeText(this, "Let's play!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Visit www.begambleaware.org for the facts about gambling.", Toast.LENGTH_LONG).show();
 
 
     }

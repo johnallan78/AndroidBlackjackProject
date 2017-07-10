@@ -14,6 +14,7 @@ public class ResultActivity extends AppCompatActivity {
     TextView playerTwoCardOne;
     TextView playerTwoCardTwo;
     TextView playerTwoHand;
+    TextView finalScore;
 
     ImageView imageview;
 
@@ -31,17 +32,13 @@ public class ResultActivity extends AppCompatActivity {
         playerTwoCardOne = (TextView)findViewById(R.id.playerTwoCardOne);
         playerTwoCardTwo = (TextView)findViewById(R.id.playerTwoCardTwo);
         playerTwoHand = (TextView)findViewById(R.id.playerTwoHand);
-//        imageview =(ImageView)findViewById(R.id.imageView);
+        finalScore = (TextView)findViewById(R.id.finalScore);
 
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-//        int id = getResources().getIdentifier("First Card", "drawable", getPackageName());
-//        imageview.setImageResource(id);
 
-
-//
         String answer = extras.getString("First Card");
         playerOneCardOne.setText(answer);
 
@@ -60,7 +57,8 @@ public class ResultActivity extends AppCompatActivity {
         String player2Hand = extras.getString("Player 2 Hand");
         playerTwoHand.setText(player2Hand);
 
-
+        String result = extras.getString("Result");
+        finalScore.setText(result);
 
 
     }
