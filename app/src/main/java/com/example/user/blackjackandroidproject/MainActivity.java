@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Second Card dealt", player1.showSecondCard());
 
         String string = Integer.toString(player1.playerHandValue());
-        intent.putExtra("Player 1 Hand", "Player 1 Hand:" + string);
+        intent.putExtra("Player 1 Hand", "Player 1 Hand: " + string);
         Log.d("Hand value", player1.playerHandValue().toString());
 
         intent.putExtra("First Card Player 2", player2.showFirstCard());
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Second Card dealt", player2.showSecondCard());
 
         String player2Hand = Integer.toString(player2.playerHandValue());
-        intent.putExtra("Player 2 Hand", "Player 2 Hand:" + player2Hand);
+        intent.putExtra("Player 2 Hand", "Player 2 Hand: " + player2Hand);
         Log.d("Hand value", player2.playerHandValue().toString());
 
         String result = game.scoreCompare(player1.playerHandValue(), player2.playerHandValue());

@@ -3,6 +3,8 @@ package com.example.user.blackjackandroidproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,8 +17,8 @@ public class ResultActivity extends AppCompatActivity {
     TextView playerTwoCardTwo;
     TextView playerTwoHand;
     TextView finalScore;
+    Button playAgainButton;
 
-    ImageView imageview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class ResultActivity extends AppCompatActivity {
         playerTwoCardOne = (TextView)findViewById(R.id.playerTwoCardOne);
         playerTwoCardTwo = (TextView)findViewById(R.id.playerTwoCardTwo);
         playerTwoHand = (TextView)findViewById(R.id.playerTwoHand);
+        playAgainButton = (Button)findViewById(R.id.playAgain);
         finalScore = (TextView)findViewById(R.id.finalScore);
 
 
@@ -60,6 +63,14 @@ public class ResultActivity extends AppCompatActivity {
         String result = extras.getString("Result");
         finalScore.setText(result);
 
+
+    }
+
+    public void onPlayAgainButtonClicked(View button) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
 
     }
 }
