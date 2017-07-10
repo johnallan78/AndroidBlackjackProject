@@ -18,13 +18,6 @@ public class Player {
         dealer = new Dealer(deck);
     }
 
-    public void addCardToHand(Card card){
-        hand.addCard(card);
-    }
-
-    public Hand showHand(){
-        return this.hand;
-    }
 
     public String showFirstCard(){
             dealer.addCardToHand(dealer.deal());

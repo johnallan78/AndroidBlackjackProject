@@ -9,44 +9,31 @@ public class Dealer {
     Deck deck;
     Hand hand;
 
-    public Dealer(Deck newDeck){
+    public Dealer(Deck newDeck) {
         this.deck = new Deck();
         this.hand = new Hand();
         shuffle();
     }
 
-    public void shuffle(){
+    public void shuffle() {
         this.deck.shuffle();
     }
 
-    public Card deal(){
+    public Card deal() {
         return deck.getCard();
     }
 
-    public void addCardToHand(Card card){
+    public void addCardToHand(Card card) {
         hand.addCard(card);
     }
 
-    public Card showFirstCard(){
+    public Card showFirstCard() {
         return hand.showFirstCard();
     }
 
-    public Card showSecondCard(){
+    public Card showSecondCard() {
         return hand.showSecondCard();
     }
 
-//    public Card showThirdCard(){
-//        return hand.showThirdCard();
-//    }
-//
-//    public Card showFourthCard(){
-//        return hand.showFourthCard();
-//    }
 
-
-
-
-    public Hand showHand(){
-        return hand;
-    }
 }

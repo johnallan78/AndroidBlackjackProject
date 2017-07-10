@@ -27,17 +27,8 @@ public class Deck {
         cards = new ArrayList<Card>();
         populate();
         shuffle();
-
-
-
-
-
-
-
-
-
-
     }
+
     public void populate(){
         // use for loops to iterate through suit and rank. Use nested loops. Use values() method.
         for (Suit suit : Suit.values()){

@@ -7,17 +7,10 @@ import static android.R.attr.value;
  */
 
 public enum Suit {
-    CLUBS("Clubs"),
-    SPADES("Spades"),
-    HEARTS("Hearts"),
-    DIAMONDS("Diamonds");
+    CLUBS,
+    SPADES,
+    HEARTS,
+    DIAMONDS
 
-    String value;
-    Suit(String value){
-        this.value = value;
-    }
 
-    public String getValue() {
-        return value;
-    }
 }

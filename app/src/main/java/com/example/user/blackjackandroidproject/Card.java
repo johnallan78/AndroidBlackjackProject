@@ -7,10 +7,8 @@ package com.example.user.blackjackandroidproject;
 public class Card {
     Rank rank;
     Suit suit;
-    int img;
 
     // Obviously, each instance of a card must have a rank and a suit.
-
 
 
     public Card(Rank valueOfCard, Suit suitOfCard) {
@@ -23,11 +21,8 @@ public class Card {
         return this.rank.getValue(); // using getter from the enum
     }
 
-    public String cardName(){
-        return  this.rank.getValue() + " of " + this.suit.getValue() ;
+    public String cardName() {
+        return this.rank + " of " + this.suit;
     }
 
-//    public int getImg() {
-//        return img;
-//    }
 }

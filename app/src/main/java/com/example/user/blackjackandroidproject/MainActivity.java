@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayButtonClicked(View button) {
 
-//        int cardPic = card.getImg();
-//        String string = Integer.toString(cardPic);
 
         player1 = new Player();
         player2 = new Player();
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("Player 2 Hand", "Player 2 Hand:" + player2Hand);
         Log.d("Hand value", player2.playerHandValue().toString());
 
-        // write logic to show another card
+
         this.startActivity(intent);
 
 //        Toast.makeText(this, "Let's play!", Toast.LENGTH_SHORT).show();
