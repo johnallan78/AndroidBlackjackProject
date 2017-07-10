@@ -15,6 +15,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Button playButton;
     Game game;
+    Player player1;
+    Player player2;
 
 
     @Override
@@ -31,29 +33,30 @@ public class MainActivity extends AppCompatActivity {
 //        int cardPic = card.getImg();
 //        String string = Integer.toString(cardPic);
 
-
+        player1 = new Player();
+        player2 = new Player();
         game = new Game();
         Intent intent = new Intent(this, ResultActivity.class);
 
-        intent.putExtra("First Card", game.showFirstCard());
-        Log.d("Card dealt", game.showFirstCard());
+        intent.putExtra("First Card", player1.showFirstCard());
+        Log.d("Card dealt", player1.showFirstCard());
 
-        intent.putExtra("Second Card", game.showSecondCard());
-        Log.d("Second Card dealt", game.showSecondCard());
+        intent.putExtra("Second Card", player1.showSecondCard());
+        Log.d("Second Card dealt", player1.showSecondCard());
 
-        String string = Integer.toString(game.playerHandValue());
+        String string = Integer.toString(player1.playerHandValue());
         intent.putExtra("Player 1 Hand", "Player 1 Hand:" + string);
-        Log.d("Hand value", game.playerHandValue().toString());
-//
-        intent.putExtra("First Card Player 2", game.showFirstCardSecondPlayer());
-        Log.d("Card dealt", game.showFirstCard());
+        Log.d("Hand value", player1.playerHandValue().toString());
 
-        intent.putExtra("Second Card Player 2", game.showSecondCardSecondPlayer());
-        Log.d("Second Card dealt", game.showSecondCard());
+        intent.putExtra("First Card Player 2", player2.showFirstCard());
+        Log.d("Card dealt", player2.showFirstCard());
 
-        String player2Hand = Integer.toString(game.playerHandValueSecondPlayer());
-        intent.putExtra("Player 2 hand",player2Hand );
+        intent.putExtra("Second Card Player 2", player2.showSecondCard());
+        Log.d("Second Card dealt", player2.showSecondCard());
 
+        String player2Hand = Integer.toString(player2.playerHandValue());
+        intent.putExtra("Player 2 Hand", "Player 2 Hand:" + player2Hand);
+        Log.d("Hand value", player2.playerHandValue().toString());
 
         // write logic to show another card
         this.startActivity(intent);

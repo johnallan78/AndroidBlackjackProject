@@ -22,10 +22,9 @@ public class Game {
     int player2hand = 0;
 
     public String showFirstCard(){
-        for (int i = 0; i < 2; i++) { //common for loop in Java. weird but useful.
+//        for (int i = 0; i < 2; i++) { //common for loop in Java. weird but useful.
             dealer.addCardToHand(dealer.deal());
-            player.addCardToHand(dealer.deal());
-        }
+//        }
             Card card = dealer.showFirstCard();
             playerhand += card.cardValue();
             return card.cardName();
@@ -39,7 +38,7 @@ public class Game {
     }
 
 //    public String showFirstCardSecondPlayer(){
-//        for (int i = 0; i < 4; i++) { //common for loop in Java. weird but useful.
+//        for (int i = 0; i < 2; i++) { //common for loop in Java. weird but useful.
 //            dealer.addCardToHand(dealer.deal());
 //            player.addCardToHand(dealer.deal());
 //        }

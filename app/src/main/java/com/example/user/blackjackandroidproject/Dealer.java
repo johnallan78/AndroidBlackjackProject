@@ -10,7 +10,7 @@ public class Dealer {
     Hand hand;
 
     public Dealer(Deck newDeck){
-        this.deck = newDeck;
+        this.deck = new Deck();
         this.hand = new Hand();
         shuffle();
     }
@@ -35,13 +35,13 @@ public class Dealer {
         return hand.showSecondCard();
     }
 
-    public Card showThirdCard(){
-        return hand.showThirdCard();
-    }
-
-    public Card showFourthCard(){
-        return hand.showFourthCard();
-    }
+//    public Card showThirdCard(){
+//        return hand.showThirdCard();
+//    }
+//
+//    public Card showFourthCard(){
+//        return hand.showFourthCard();
+//    }
 
 
 
