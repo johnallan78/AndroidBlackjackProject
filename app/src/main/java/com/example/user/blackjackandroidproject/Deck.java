@@ -30,13 +30,23 @@ public class Deck {
     }
 
     public void populate(){
-        // use for loops to iterate through suit and rank. Use nested loops. Use values() method.
-        for (Suit suit : Suit.values()){
-            for (Rank rank : Rank.values()){
-                cards.add(new Card(rank, suit)); //  create new instance of Card and add it to the array.
-            }
-        }
+        //new method trying out pics enum class
+    for (Pics pic : Pics.values()){
+    cards.add(new Card(pic));
     }
+ }
+
+
+
+
+
+        // use for loops to iterate through suit and rank. Use nested loops. Use values() method.
+//        for (Suit suit : Suit.values()){
+//            for (Rank rank : Rank.values()){
+//                cards.add(new Card(rank, suit)); //  create new instance of Card and add it to the array.
+//            }
+//        }
+//    }
 
     public Card getCard(){
         return cards.remove(0);

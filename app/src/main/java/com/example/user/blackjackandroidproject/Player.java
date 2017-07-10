@@ -19,23 +19,41 @@ public class Player {
     }
 
 
-    public String showFirstCard(){
-            dealer.addCardToHand(dealer.deal());
-            Card card = dealer.showFirstCard();
-            playerhand += card.cardValue();
-            return card.cardName();
+    public int showFirstCard(){
+        dealer.addCardToHand(dealer.deal());
+        Card card = dealer.showFirstCard();
+        playerhand += card.cardValue();
+        return card.cardPic();
 
     }
 
+//      KEEP THIS METHOD!
+//    public String showFirstCard(){
+//            dealer.addCardToHand(dealer.deal());
+//            Card card = dealer.showFirstCard();
+//            playerhand += card.cardValue();
+//            return card.cardName();
+//
+//    }
 
-    public String showSecondCard(){
+
+
+    public int showSecondCard(){
         dealer.addCardToHand(dealer.deal());
         Card card = dealer.showSecondCard();
         playerhand += card.cardValue();
-        return card.cardName();
+        return card.cardPic();
     }
 
+//      keep this method!
+//    public String showSecondCard(){
+//        dealer.addCardToHand(dealer.deal());
+//        Card card = dealer.showSecondCard();
+//        playerhand += card.cardValue();
+//        return card.cardName();
+//    }
+
     public Integer playerHandValue(){
-        return (playerhand / 2 );
+        return (playerhand );
     }
 }

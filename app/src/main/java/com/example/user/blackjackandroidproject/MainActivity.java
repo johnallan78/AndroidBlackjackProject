@@ -36,21 +36,36 @@ public class MainActivity extends AppCompatActivity {
         game = new Game();
         Intent intent = new Intent(this, ResultActivity.class);
 
-        intent.putExtra("First Card", player1.showFirstCard());
-        Log.d("Card dealt", player1.showFirstCard());
+        String pic = Integer.toString(player1.showFirstCard());
+        intent.putExtra("First Card", pic);
+//        Log.d("Card dealt", player1.showFirstCard());
 
-        intent.putExtra("Second Card", player1.showSecondCard());
-        Log.d("Second Card dealt", player1.showSecondCard());
+//          keep the following lines!
+//        intent.putExtra("First Card", player1.showFirstCard());
+//        Log.d("Card dealt", player1.showFirstCard());
+
+        String pic2 = Integer.toString(player1.showSecondCard());
+        intent.putExtra("Second Card", pic2);
+        Log.d("Second Card dealt", pic2);
 
         String string = Integer.toString(player1.playerHandValue());
         intent.putExtra("Player 1 Hand", "Player 1 Hand: " + string);
         Log.d("Hand value", player1.playerHandValue().toString());
 
-        intent.putExtra("First Card Player 2", player2.showFirstCard());
-        Log.d("Card dealt", player2.showFirstCard());
 
-        intent.putExtra("Second Card Player 2", player2.showSecondCard());
-        Log.d("Second Card dealt", player2.showSecondCard());
+
+
+        String pic3 = Integer.toString(player2.showFirstCard());
+        intent.putExtra("First Card Player 2", pic3);
+
+//        intent.putExtra("First Card Player 2", player2.showFirstCard());
+//        Log.d("Card dealt", player2.showFirstCard());
+
+        String pic4 = Integer.toString(player2.showSecondCard());
+        intent.putExtra("Second Card Player 2", pic4);
+
+//        intent.putExtra("Second Card Player 2", player2.showSecondCard());
+//        Log.d("Second Card dealt", player2.showSecondCard());
 
         String player2Hand = Integer.toString(player2.playerHandValue());
         intent.putExtra("Player 2 Hand", "Player 2 Hand: " + player2Hand);
