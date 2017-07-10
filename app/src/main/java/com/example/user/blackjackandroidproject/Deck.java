@@ -25,17 +25,7 @@ public class Deck {
 
     public Deck(){
         cards = new ArrayList<Card>();
-//        R.drawable.ace_clubs
-        cards.add(new Card(ACE, CLUBS, R.drawable.c1));
-        cards.add(new Card(TWO, CLUBS, R.drawable.c2));
-        cards.add(new Card(THREE, CLUBS, R.drawable.c3));
-        cards.add(new Card(FOUR, CLUBS, R.drawable.c4));
-        cards.add(new Card(FIVE, CLUBS, R.drawable.c5));
-        cards.add(new Card(SIX, CLUBS, R.drawable.c6));
-        cards.add(new Card(SEVEN, CLUBS, R.drawable.c7));
-        cards.add(new Card(EIGHT, CLUBS, R.drawable.c8));
-        cards.add(new Card(NINE, CLUBS, R.drawable.c9));
-        cards.add(new Card(TEN, CLUBS, R.drawable.c10));
+        populate();
         shuffle();
 
 
@@ -45,19 +35,17 @@ public class Deck {
 
 
 
-//        populate(); // every time we populate the deck we call this function. Do not write logic inside the constructor.
 
 
     }
-//        MODIFY POPULATE METHOD TO ADD IMAGE WHEN LOOPING.
-//    public void populate(){
-//        // use for loops to iterate through suit and rank. Use nested loops. Use values() method.
-//        for (Suit suit : Suit.values()){
-//            for (Rank rank : Rank.values()){
-//                cards.add(new Card(rank, suit)); //  create new instance of Card and add it to the array.
-//            }
-//        }
-//    }
+    public void populate(){
+        // use for loops to iterate through suit and rank. Use nested loops. Use values() method.
+        for (Suit suit : Suit.values()){
+            for (Rank rank : Rank.values()){
+                cards.add(new Card(rank, suit)); //  create new instance of Card and add it to the array.
+            }
+        }
+    }
 
     public Card getCard(){
         return cards.remove(0);

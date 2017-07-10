@@ -61,5 +61,7 @@ public class ResultActivity extends AppCompatActivity {
         playerTwoHand.setText(player2Hand);
 
 
+
+
     }
 }

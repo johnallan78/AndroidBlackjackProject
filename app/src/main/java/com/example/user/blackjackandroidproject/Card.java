@@ -13,10 +13,9 @@ public class Card {
 
 
 
-    public Card(Rank valueOfCard, Suit suitOfCard, int img) {
+    public Card(Rank valueOfCard, Suit suitOfCard) {
         this.rank = valueOfCard;
         this.suit = suitOfCard;
-        this.img = img;
 
     }
 
@@ -28,7 +27,7 @@ public class Card {
         return  this.rank.getValue() + " of " + this.suit.getValue() ;
     }
 
-    public int getImg() {
-        return img;
-    }
+//    public int getImg() {
+//        return img;
+//    }
 }
