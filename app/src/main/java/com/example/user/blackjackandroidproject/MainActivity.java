@@ -38,41 +38,60 @@ public class MainActivity extends AppCompatActivity {
 
         String pic = Integer.toString(player1.showFirstCard());
         intent.putExtra("First Card", pic);
-//        Log.d("Card dealt", player1.showFirstCard());
 
-//          keep the following lines!
-//        intent.putExtra("First Card", player1.showFirstCard());
-//        Log.d("Card dealt", player1.showFirstCard());
 
         String pic2 = Integer.toString(player1.showSecondCard());
         intent.putExtra("Second Card", pic2);
         Log.d("Second Card dealt", pic2);
-
-        String string = Integer.toString(player1.playerHandValue());
-        intent.putExtra("Player 1 Hand", "Player 1 Hand: " + string);
-        Log.d("Hand value", player1.playerHandValue().toString());
-
 
 
 
         String pic3 = Integer.toString(player2.showFirstCard());
         intent.putExtra("First Card Player 2", pic3);
 
-//        intent.putExtra("First Card Player 2", player2.showFirstCard());
-//        Log.d("Card dealt", player2.showFirstCard());
-
         String pic4 = Integer.toString(player2.showSecondCard());
         intent.putExtra("Second Card Player 2", pic4);
-
-//        intent.putExtra("Second Card Player 2", player2.showSecondCard());
-//        Log.d("Second Card dealt", player2.showSecondCard());
 
         String player2Hand = Integer.toString(player2.playerHandValue());
         intent.putExtra("Player 2 Hand", "Player 2 Hand: " + player2Hand);
         Log.d("Hand value", player2.playerHandValue().toString());
 
-        String result = game.scoreCompare(player1.playerHandValue(), player2.playerHandValue());
-        intent.putExtra("Result", result);
+        if (player1.playerHandValue() < 16)
+        { String playerCard3 = Integer.toString(player1.thirdCard());
+        intent.putExtra("Third Card", playerCard3);
+
+            String string = Integer.toString(player1.playerHandValue());
+            intent.putExtra("Player 1 Hand", "Player 1 Hand: " + string);
+            Log.d("Hand value", player1.playerHandValue().toString());
+
+            String result = game.scoreCompare(player1.playerHandValue(), player2.playerHandValue());
+            intent.putExtra("Result", result);
+        }
+
+        else
+
+        {  String playerCard3 = Integer.toString(R.drawable.stand);
+            intent.putExtra("Third Card", playerCard3);
+
+            String string = Integer.toString(player1.playerHandValue());
+            intent.putExtra("Player 1 Hand", "Player 1 Hand: " + string);
+            Log.d("Hand value", player1.playerHandValue().toString());
+
+
+            String result = game.scoreCompare(player1.playerHandValue(), player2.playerHandValue());
+            intent.putExtra("Result", result);
+        }
+
+        Log.d("Third Card Value", player1.playerHandValue().toString());
+
+
+//        String string = Integer.toString(player1.playerHandValue());
+//        intent.putExtra("Player 1 Hand", "Player 1 Hand: " + string);
+//        Log.d("Hand value", player1.playerHandValue().toString());
+//
+//        String result = game.scoreCompare(player1.playerHandValue(), player2.playerHandValue());
+//        intent.putExtra("Result", result);
+
 
 
         this.startActivity(intent);

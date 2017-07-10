@@ -7,6 +7,8 @@
     android:background="#E1F7FD"
     tools:context="com.example.user.blackjackandroidproject.MainActivity">
 
+
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"

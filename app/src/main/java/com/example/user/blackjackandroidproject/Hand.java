@@ -28,18 +28,19 @@ public class Hand {
         return cards.get(1);
     }
 
-
-
-
-    public ArrayList<Card> showHand() {
-        return cards;
+    public Card showThirdCard(){
+        return cards.get(2);
     }
 
-    public Integer getHandValue(){
-        int total = 0;
-        for (Card card : cards){
-            total += card.cardValue();
-        }
-        return total;
-    }
+//    public ArrayList<Card> showHand() {
+//        return cards;
+//    }
+//
+//    public Integer getHandValue(){
+//        int total = 0;
+//        for (Card card : cards){
+//            total += card.cardValue();
+//        }
+//        return total;
+//    }
 }

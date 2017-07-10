@@ -35,5 +35,9 @@ public class Dealer {
         return hand.showSecondCard();
     }
 
+    public Card showThirdCard() {
+        return hand.showThirdCard();
+    }
+
 
 }

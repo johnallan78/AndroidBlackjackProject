@@ -18,7 +18,6 @@ public class Player {
         dealer = new Dealer(deck);
     }
 
-
     public int showFirstCard(){
         dealer.addCardToHand(dealer.deal());
         Card card = dealer.showFirstCard();
@@ -27,17 +26,6 @@ public class Player {
 
     }
 
-//      KEEP THIS METHOD!
-//    public String showFirstCard(){
-//            dealer.addCardToHand(dealer.deal());
-//            Card card = dealer.showFirstCard();
-//            playerhand += card.cardValue();
-//            return card.cardName();
-//
-//    }
-
-
-
     public int showSecondCard(){
         dealer.addCardToHand(dealer.deal());
         Card card = dealer.showSecondCard();
@@ -45,13 +33,13 @@ public class Player {
         return card.cardPic();
     }
 
-//      keep this method!
-//    public String showSecondCard(){
-//        dealer.addCardToHand(dealer.deal());
-//        Card card = dealer.showSecondCard();
-//        playerhand += card.cardValue();
-//        return card.cardName();
-//    }
+    public int thirdCard(){
+            dealer.addCardToHand(dealer.deal());
+            Card card = dealer.showThirdCard();
+            playerhand += card.cardValue();
+            return card.cardPic();
+
+    }
 
     public Integer playerHandValue(){
         return (playerhand );

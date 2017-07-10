@@ -18,16 +18,13 @@ public class ResultActivity extends AppCompatActivity {
     ImageView image2;
     ImageView image3;
     ImageView image4;
+    ImageView image5;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
-
-
-
 
         playerOneHand = (TextView)findViewById(R.id.playerOneHand);
         playerTwoHand = (TextView)findViewById(R.id.playerTwoHand);
@@ -37,7 +34,7 @@ public class ResultActivity extends AppCompatActivity {
         image2 = (ImageView)findViewById(R.id.card2Image);
         image3 = (ImageView)findViewById(R.id.card3Image);
         image4 = (ImageView)findViewById(R.id.card4Image);
-
+        image5 = (ImageView)findViewById(R.id.card5Image);
 
 
         Intent intent = getIntent();
@@ -49,14 +46,8 @@ public class ResultActivity extends AppCompatActivity {
         int player1card2 = Integer.parseInt(extras.getString("Second Card"));
         image2.setImageResource(player1card2);
 
-
-
-
         String hand = extras.getString("Player 1 Hand");
         playerOneHand.setText(hand);
-
-
-
 
         int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
         image3.setImageResource(player2card1);
@@ -64,12 +55,15 @@ public class ResultActivity extends AppCompatActivity {
         int player2card2 = Integer.parseInt(extras.getString("Second Card Player 2"));
         image4.setImageResource(player2card2);
 
-
         String player2Hand = extras.getString("Player 2 Hand");
         playerTwoHand.setText(player2Hand);
 
+        int player1card3 = Integer.parseInt(extras.getString("Third Card"));
+        image5.setImageResource(player1card3);
+
         String result = extras.getString("Result");
         finalScore.setText(result);
+
 
 
     }
