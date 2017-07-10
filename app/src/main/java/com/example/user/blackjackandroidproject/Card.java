@@ -25,7 +25,7 @@ public class Card {
     }
 
     public String cardName(){
-        return  this.suit.getValue() + this.rank.getValue() ;
+        return  this.rank.getValue() + " of " + this.suit.getValue() ;
     }
 
     public int getImg() {

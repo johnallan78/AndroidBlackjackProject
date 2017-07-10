@@ -31,6 +31,21 @@ public class Dealer {
         return hand.showFirstCard();
     }
 
+    public Card showSecondCard(){
+        return hand.showSecondCard();
+    }
+
+    public Card showThirdCard(){
+        return hand.showThirdCard();
+    }
+
+    public Card showFourthCard(){
+        return hand.showFourthCard();
+    }
+
+
+
+
     public Hand showHand(){
         return hand;
     }

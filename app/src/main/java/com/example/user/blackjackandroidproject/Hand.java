@@ -24,11 +24,22 @@ public class Hand {
         return cards.get(0);
     }
 
+    public Card showSecondCard() {
+        return cards.get(1);
+    }
+
+    public Card showThirdCard() {
+        return cards.get(2);
+    }
+
+    public Card showFourthCard(){return cards.get(3);}
+
+
     public ArrayList<Card> showHand() {
         return cards;
     }
 
-    public int getHandValue(){
+    public Integer getHandValue(){
         int total = 0;
         for (Card card : cards){
             total += card.cardValue();
