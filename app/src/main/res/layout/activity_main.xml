@@ -49,11 +49,12 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/banner"
-        tools:layout_editor_absoluteY="-64dp"
+        app:srcCompat="@drawable/blackjack"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginBottom="323dp"
+        app:layout_constraintBottom_toTopOf="@+id/playGame" />
 
 </android.support.constraint.ConstraintLayout>
