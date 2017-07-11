@@ -74,7 +74,7 @@ public class ResultActivity extends AppCompatActivity {
 
         String hand = Integer.toString(playerOne.playerHandValue());
         player1 += playerOne.playerHandValue();
-        playerOneHand.setText(hand);
+        playerOneHand.setText("Player 1 Hand: " + hand);
 
 //        int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
 //        image3.setImageResource(player2card1);
@@ -93,7 +93,7 @@ public class ResultActivity extends AppCompatActivity {
 
         String player2Hand = Integer.toString(playerTwo.playerHandValue());
         player2 += playerTwo.playerHandValue();
-        playerTwoHand.setText(player2Hand);
+        playerTwoHand.setText("Player 2 Hand: " + player2Hand);
 
 //        int player1card3 = Integer.parseInt(extras.getString("Third Card"));
 //        image5.setImageResource(player1card3);

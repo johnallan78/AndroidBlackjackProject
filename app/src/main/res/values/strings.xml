@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Black Jack</string>
     <string name="rules">Game Rules</string>
-    <string name="rules_one">The Computer will deal each player two cards at random.</string>
-    <string name="rules_two">If either player has a combined hand of less than sixteen, another card
-    will be dealt.</string>
+    <string name="rules_one">The Computer will deal each player two cards at random. Aces are high.
+    Always have been, always will be.</string>
+    <string name="rules_two">If a player has a combined score of less than 16 they MUST hit. If a
+        player has a score over 16, they cannot hit.</string>
     <string name="rules_three">The winner is the player with the highest score. Any player with a score
     over 21 is declared bust.</string>
-    <string name="rules_four">If both players are bust, or the scores remain the same after 3 cards, the result is a draw.</string>
+    <string name="rules_four">If both players are bust, or the scores remain the same after 3 cards,
+        the result is a draw.</string>
     <string name="link">www.begambleaware.org</string>
+    <string name="player1Hand">Player 1 Hand: </string>
 </resources>
