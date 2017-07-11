@@ -60,16 +60,16 @@
         android:id="@+id/playerTwoHand"
         android:layout_width="159dp"
         android:layout_height="33dp"
+        android:layout_marginBottom="301dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:fontFamily="serif"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/card3Image"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.264"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="201dp" />
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintLeft_toRightOf="@+id/card3Image"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/finalScore"
@@ -91,16 +91,17 @@
         style="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
         android:onClick="onPlayAgainButtonClicked"
         android:text="Play Again"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/finalScore"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/finalScore" />
 
     <ImageView
         android:id="@+id/card3Image"
@@ -171,28 +172,33 @@
 
     <Button
         android:id="@+id/hitButton1"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="76dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
         android:onClick="onHitButtonClickedPlayer1"
         android:text="Hit"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/playerOneHand"
         app:layout_constraintLeft_toRightOf="@+id/cardImage"
-        android:layout_marginLeft="8dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerOneHand" />
 
     <Button
         android:id="@+id/hitButton2"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="76dp"
+        android:layout_marginTop="7dp"
+        android:elevation="3dp"
         android:onClick="onHitButtonClickedPlayer2"
         android:text="Hit"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/playerTwoHand"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintLeft_toRightOf="@+id/card3Image"
-        android:layout_marginLeft="8dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerTwoHand" />
 
 </android.support.constraint.ConstraintLayout>

@@ -60,16 +60,11 @@ public enum Pics {
     QUEENH(10, R.drawable.h12),
     KINGH(10, R.drawable.h11);
 
-
-
-
-
-
     private int value;
     private  int img;
 
 
- Pics( int value, int img){
+    Pics( int value, int img){
     this.value = value;
     this.img = img;
     }
@@ -82,6 +77,4 @@ public enum Pics {
     public int getValue(){
         return value;
     }
-
-
 }

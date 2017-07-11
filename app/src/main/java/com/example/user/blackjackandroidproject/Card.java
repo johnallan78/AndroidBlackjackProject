@@ -10,9 +10,11 @@ public class Card {
     public Card(Pics pic){
         this.pic = pic;
     }
+
     public int cardValue() {
         return this.pic.getValue(); // using getter from the enum
     }
+
     public int cardPic(){
         return this.pic.getPic();
     }

@@ -50,62 +50,25 @@ public class ResultActivity extends AppCompatActivity {
         playerOne = new Player();
         playerTwo = new Player();
 
-
-//
-//        Intent intent = getIntent();
-//        Bundle extras = intent.getExtras();
-
-//        int player1card1 = Integer.parseInt(extras.getString("First Card"));
-//        image.setImageResource(player1card1);
-
         int player1card1 = playerOne.showFirstCard();
         image.setImageResource(player1card1);
 
-
-
-//        int player1card2 = Integer.parseInt(extras.getString("Second Card"));
-//        image2.setImageResource(player1card2);
-
         int player1card2 = playerOne.showSecondCard();
         image2.setImageResource(player1card2);
-
-//        String hand = extras.getString("Player 1 Hand");
-//        playerOneHand.setText(hand);
 
         String hand = Integer.toString(playerOne.playerHandValue());
         player1 += playerOne.playerHandValue();
         playerOneHand.setText("Player 1 Hand: " + hand);
 
-//        int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
-//        image3.setImageResource(player2card1);
-
         int player2card1 = playerTwo.showFirstCard();
         image3.setImageResource(player2card1);
-
-//        int player2card2 = Integer.parseInt(extras.getString("Second Card Player 2"));
-//        image4.setImageResource(player2card2);
 
         int player2card2 = playerTwo.showSecondCard();
         image4.setImageResource(player2card2);
 
-//        String player2Hand = extras.getString("Player 2 Hand");
-//        playerTwoHand.setText(player2Hand);
-
         String player2Hand = Integer.toString(playerTwo.playerHandValue());
         player2 += playerTwo.playerHandValue();
         playerTwoHand.setText("Player 2 Hand: " + player2Hand);
-
-//        int player1card3 = Integer.parseInt(extras.getString("Third Card"));
-//        image5.setImageResource(player1card3);
-//
-//        int player2card3 = Integer.parseInt(extras.getString("Third Card Player 2"));
-//        image6.setImageResource(player2card3);
-
-//
-//        String result = extras.getString("Result");
-//        finalScore.setText(result);
-
-
     }
 
     public void onPlayAgainButtonClicked(View button) {
@@ -113,35 +76,27 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-
     }
 
     public void onHitButtonClickedPlayer1(View button) {
 
         hitButton1 = (Button) findViewById(R.id.hitButton1);
         playerOne = new Player();
-//        Intent intent = getIntent();
-//        Bundle extras = intent.getExtras();
-//
-//        int player1card1 = Integer.parseInt(extras.getString("First Card"));
-//        player1 += player1card1;
-//        int player1card2 = Integer.parseInt(extras.getString("Second Card"));
-//        player1 += player1card2;
+
 
         if (player1 > 16){
             hitButton1.setEnabled(false);
-        }
-        else {
-
+            }
+        else
+            {
             int player1card3 = playerOne.showFirstCard();
             player1 += playerOne.playerHandValue();
             image5.setImageResource(player1card3);
 
 
             String playerResult = Integer.toString(player1);
-            playerOneHand.setText(playerResult);
-
-        }
+            playerOneHand.setText("Player 1 Hand: " + playerResult);
+            }
 
     }
 
@@ -150,17 +105,9 @@ public class ResultActivity extends AppCompatActivity {
         hitButton2 = (Button) findViewById(R.id.hitButton2);
         playerTwo = new Player();
 
-//        Intent intent = getIntent();
-//        Bundle extras = intent.getExtras();
-//
-//        int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
-//        player2 += player2card1;
-//        int player2card2 = Integer.parseInt(extras.getString("Second Card Player 2"));
-//        player2 += player2card2;
-
         if (player2 > 16){
             hitButton2.setEnabled(false);
-        }
+            }
         else
             {
             int player2card3 = playerTwo.showFirstCard();
@@ -168,22 +115,11 @@ public class ResultActivity extends AppCompatActivity {
             image6.setImageResource(player2card3);
 
             String playerResult = Integer.toString(player2);
-            playerTwoHand.setText(playerResult);
-        }
-
+            playerTwoHand.setText("Player 2 Hand: " + playerResult);
+            }
             game = new Game();
             String result = game.scoreCompare(player1, player2);
             finalScore.setText(result);
 
     }
-
-
-
-
-
-
-
-
-
-
 }

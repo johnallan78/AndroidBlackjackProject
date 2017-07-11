@@ -23,7 +23,6 @@ public class Player {
         Card card = dealer.showFirstCard();
         playerhand += card.cardValue();
         return card.cardPic();
-
     }
 
     public int showSecondCard(){
@@ -31,14 +30,6 @@ public class Player {
         Card card = dealer.showSecondCard();
         playerhand += card.cardValue();
         return card.cardPic();
-    }
-
-    public int thirdCard(){
-            dealer.addCardToHand(dealer.deal());
-            Card card = dealer.showThirdCard();
-            playerhand += card.cardValue();
-            return card.cardPic();
-
     }
 
     public Integer playerHandValue(){
