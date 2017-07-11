@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.startActivity(intent);
 
-        Toast.makeText(this, "Visit www.begambleaware.org for the facts about gambling.", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Visit www.begambleaware.org for the facts about gambling.", Toast.LENGTH_LONG).show();
 
 
     }
