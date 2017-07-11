@@ -130,7 +130,6 @@ public class ResultActivity extends AppCompatActivity {
 
         if (player1 > 16){
             hitButton1.setEnabled(false);
-            return;
         }
         else {
 
@@ -141,7 +140,7 @@ public class ResultActivity extends AppCompatActivity {
 
             String playerResult = Integer.toString(player1);
             playerOneHand.setText(playerResult);
-            return;
+
         }
 
     }
@@ -161,7 +160,6 @@ public class ResultActivity extends AppCompatActivity {
 
         if (player2 > 16){
             hitButton2.setEnabled(false);
-            return;
         }
         else
             {
@@ -171,17 +169,19 @@ public class ResultActivity extends AppCompatActivity {
 
             String playerResult = Integer.toString(player2);
             playerTwoHand.setText(playerResult);
-                return;
         }
 
-//        String result = extras.getString("Result");
-//        finalScore.setText(result);
+            game = new Game();
+            String result = game.scoreCompare(player1, player2);
+            finalScore.setText(result);
+
     }
 
 
 
-//    String result = game.scoreCompare(player1, player2);
-//        finalScore.setText(result);
+
+
+
 
 
 
