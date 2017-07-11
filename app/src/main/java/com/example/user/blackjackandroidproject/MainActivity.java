@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -26,6 +29,28 @@ public class MainActivity extends AppCompatActivity {
 
         playButton = (Button) findViewById(R.id.playGame);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_rules:
+                Intent intent = new Intent(this, RulesActivity.class);
+                this.startActivity(intent);
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+        return true;
     }
 
     public void onPlayButtonClicked(View button) {
