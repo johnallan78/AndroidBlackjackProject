@@ -11,4 +11,8 @@
         the result is a draw.</string>
     <string name="link">www.begambleaware.org</string>
     <string name="player1Hand">Player 1 Hand: </string>
+    <string name="about">Written by John Allan</string>
+    <string name="about2">CodeClan July 2017</string>
+    <string name="about3">Acknowledgements to staff and fellow students for their
+        assistance</string>
 </resources>
