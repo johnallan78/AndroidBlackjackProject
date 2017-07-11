@@ -8,18 +8,28 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.example.user.blackjackandroidproject.R.id.player1;
+
 public class ResultActivity extends AppCompatActivity {
 
     TextView playerOneHand;
     TextView playerTwoHand;
     TextView finalScore;
     Button playAgainButton;
+    Button hitButton1;
+    Button hitButton2;
     ImageView image;
     ImageView image2;
     ImageView image3;
     ImageView image4;
     ImageView image5;
     ImageView image6;
+    Player playerOne;
+    Player playerTwo;
+    Game game;
+
+    Integer player1 = 0;
+    Integer player2 = 0;
 
 
     @Override
@@ -27,50 +37,73 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        playerOneHand = (TextView)findViewById(R.id.playerOneHand);
-        playerTwoHand = (TextView)findViewById(R.id.playerTwoHand);
-        playAgainButton = (Button)findViewById(R.id.playAgain);
-        finalScore = (TextView)findViewById(R.id.finalScore);
-        image = (ImageView)findViewById(R.id.cardImage);
-        image2 = (ImageView)findViewById(R.id.card2Image);
-        image3 = (ImageView)findViewById(R.id.card3Image);
-        image4 = (ImageView)findViewById(R.id.card4Image);
-        image5 = (ImageView)findViewById(R.id.card5Image);
-        image6 = (ImageView)findViewById(R.id.card6Image);
+        playerOneHand = (TextView) findViewById(R.id.playerOneHand);
+        playerTwoHand = (TextView) findViewById(R.id.playerTwoHand);
+        playAgainButton = (Button) findViewById(R.id.playAgain);
+        finalScore = (TextView) findViewById(R.id.finalScore);
+        image = (ImageView) findViewById(R.id.cardImage);
+        image2 = (ImageView) findViewById(R.id.card2Image);
+        image3 = (ImageView) findViewById(R.id.card3Image);
+        image4 = (ImageView) findViewById(R.id.card4Image);
+        image5 = (ImageView) findViewById(R.id.card5Image);
+        image6 = (ImageView) findViewById(R.id.card6Image);
+        playerOne = new Player();
+        playerTwo = new Player();
 
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
+//
+//        Intent intent = getIntent();
+//        Bundle extras = intent.getExtras();
 
-        int player1card1 = Integer.parseInt(extras.getString("First Card"));
+//        int player1card1 = Integer.parseInt(extras.getString("First Card"));
+//        image.setImageResource(player1card1);
+
+        int player1card1 = playerOne.showFirstCard();
         image.setImageResource(player1card1);
 
-        int player1card2 = Integer.parseInt(extras.getString("Second Card"));
+
+
+//        int player1card2 = Integer.parseInt(extras.getString("Second Card"));
+//        image2.setImageResource(player1card2);
+
+        int player1card2 = playerOne.showSecondCard();
         image2.setImageResource(player1card2);
 
-        String hand = extras.getString("Player 1 Hand");
+//        String hand = extras.getString("Player 1 Hand");
+//        playerOneHand.setText(hand);
+
+        String hand = Integer.toString(playerOne.playerHandValue());
+        player1 += playerOne.playerHandValue();
         playerOneHand.setText(hand);
 
-        int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
+//        int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
+//        image3.setImageResource(player2card1);
+
+        int player2card1 = playerTwo.showFirstCard();
         image3.setImageResource(player2card1);
 
-        int player2card2 = Integer.parseInt(extras.getString("Second Card Player 2"));
+//        int player2card2 = Integer.parseInt(extras.getString("Second Card Player 2"));
+//        image4.setImageResource(player2card2);
+
+        int player2card2 = playerTwo.showSecondCard();
         image4.setImageResource(player2card2);
 
-        String player2Hand = extras.getString("Player 2 Hand");
+//        String player2Hand = extras.getString("Player 2 Hand");
+//        playerTwoHand.setText(player2Hand);
+
+        String player2Hand = Integer.toString(playerTwo.playerHandValue());
+        player2 += playerTwo.playerHandValue();
         playerTwoHand.setText(player2Hand);
 
-        int player1card3 = Integer.parseInt(extras.getString("Third Card"));
-        image5.setImageResource(player1card3);
+//        int player1card3 = Integer.parseInt(extras.getString("Third Card"));
+//        image5.setImageResource(player1card3);
+//
+//        int player2card3 = Integer.parseInt(extras.getString("Third Card Player 2"));
+//        image6.setImageResource(player2card3);
 
-        int player2card3 = Integer.parseInt(extras.getString("Third Card Player 2"));
-        image6.setImageResource(player2card3);
-
-
-
-        String result = extras.getString("Result");
-        finalScore.setText(result);
-
+//
+//        String result = extras.getString("Result");
+//        finalScore.setText(result);
 
 
     }
@@ -82,4 +115,75 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void onHitButtonClickedPlayer1(View button) {
+
+        hitButton1 = (Button) findViewById(R.id.hitButton1);
+        playerOne = new Player();
+//        Intent intent = getIntent();
+//        Bundle extras = intent.getExtras();
+//
+//        int player1card1 = Integer.parseInt(extras.getString("First Card"));
+//        player1 += player1card1;
+//        int player1card2 = Integer.parseInt(extras.getString("Second Card"));
+//        player1 += player1card2;
+
+        if (player1 > 16){
+            hitButton1.setEnabled(false);
+            return;
+        }
+        else {
+
+            int player1card3 = playerOne.showFirstCard();
+            player1 += playerOne.playerHandValue();
+            image5.setImageResource(player1card3);
+
+
+            String playerResult = Integer.toString(player1);
+            playerOneHand.setText(playerResult);
+            return;
+        }
+
+    }
+
+    public void onHitButtonClickedPlayer2(View button) {
+
+        hitButton2 = (Button) findViewById(R.id.hitButton2);
+        playerTwo = new Player();
+
+//        Intent intent = getIntent();
+//        Bundle extras = intent.getExtras();
+//
+//        int player2card1 = Integer.parseInt(extras.getString("First Card Player 2"));
+//        player2 += player2card1;
+//        int player2card2 = Integer.parseInt(extras.getString("Second Card Player 2"));
+//        player2 += player2card2;
+
+        if (player2 > 16){
+            hitButton2.setEnabled(false);
+            return;
+        }
+        else
+            {
+            int player2card3 = playerTwo.showFirstCard();
+            player2 += playerTwo.playerHandValue();
+            image6.setImageResource(player2card3);
+
+            String playerResult = Integer.toString(player2);
+            playerTwoHand.setText(playerResult);
+                return;
+        }
+
+//        String result = extras.getString("Result");
+//        finalScore.setText(result);
+    }
+
+
+
+//    String result = game.scoreCompare(player1, player2);
+//        finalScore.setText(result);
+
+
+
+
 }
