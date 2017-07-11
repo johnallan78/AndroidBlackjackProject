@@ -39,8 +39,7 @@ public class Game {
         else if (player1Score == player2Score){
             return "A Draw!";
         }
-        else
-            return "Player 2 Wins!";
+        else return null;
     }
 }
 

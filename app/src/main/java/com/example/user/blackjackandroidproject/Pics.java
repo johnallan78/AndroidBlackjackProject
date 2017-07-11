@@ -69,7 +69,7 @@ public enum Pics {
     private  int img;
 
 
-private Pics( int value, int img){
+ Pics( int value, int img){
     this.value = value;
     this.img = img;
     }

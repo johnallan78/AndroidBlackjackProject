@@ -32,15 +32,5 @@ public class Hand {
         return cards.get(2);
     }
 
-//    public ArrayList<Card> showHand() {
-//        return cards;
-//    }
-//
-//    public Integer getHandValue(){
-//        int total = 0;
-//        for (Card card : cards){
-//            total += card.cardValue();
-//        }
-//        return total;
-//    }
+
 }
