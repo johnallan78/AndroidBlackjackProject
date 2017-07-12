@@ -6,20 +6,25 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <style name="CustomActionBarTheme"
-        parent="@android:style/Theme.Holo">
-        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="actionBarStyle">@style/CustomActionBarTheme</item>
+        <item name="android:itemBackground">@color/background</item>
         <item name="android:itemTextAppearance">@style/TextAppearance</item>
     </style>
-    <!-- Popup Menu Background Color styles -->
-    <style name="MyPopupMenu"
-        parent="@android:style/Widget.Holo.ListPopupWindow">
-        <item name="android:panelBackground">@color/background</item>
+    <style name="CustomActionBarTheme"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:titleTextStyle">@style/myTitleText</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
     </style>
+
+    <!-- Popup Menu Background Color styles -->
+
     <!-- Popup Menu Text Color styles -->
     <style name="TextAppearance">
-        <item name="android:textColor">@color/background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="myTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
 </resources>

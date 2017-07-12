@@ -30,10 +30,10 @@ public class Game {
         else if (player1Score <= 21 && player2Score > 21){
             return "Player 2 is BUST.";
         }
-        else if (player1Score > player2Score && player1Score < 21) {
+        else if (player1Score > player2Score && player1Score <= 21) {
             return "Player 1 Wins!";
         }
-        else if (player2Score > player1Score && player2Score < 21) {
+        else if (player2Score > player1Score && player2Score <= 21) {
             return "Player 2 Wins!";
         }
         else if (player1Score == player2Score){
