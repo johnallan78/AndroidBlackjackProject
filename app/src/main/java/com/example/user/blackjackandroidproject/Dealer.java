@@ -9,6 +9,7 @@ public class Dealer {
     Deck deck;
     Hand hand;
 
+    //Dealer is instantiated with a new deck each time and shuffles the cards.
     public Dealer(Deck newDeck) {
         this.deck = new Deck();
         this.hand = new Hand();
@@ -34,10 +35,5 @@ public class Dealer {
     public Card showSecondCard() {
         return hand.showSecondCard();
     }
-
-    public Card showThirdCard() {
-        return hand.showThirdCard();
-    }
-
 
 }

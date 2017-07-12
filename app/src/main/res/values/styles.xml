@@ -1,5 +1,9 @@
 <resources>
 
+    <!--Android styling is a nightmare. Thanks to J Mc for spending a disproportionate amount of time
+    helping me fixing this. Suffice to say, copy/pasting chunks from Stack may not cause the desired
+     effect. -->
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -7,7 +11,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarStyle">@style/CustomActionBarTheme</item>
-        <item name="android:itemBackground">@color/background</item>
+        <item name="android:itemBackground">@color/colorPrimaryDark</item>
         <item name="android:itemTextAppearance">@style/TextAppearance</item>
     </style>
     <style name="CustomActionBarTheme"
@@ -20,7 +24,7 @@
 
     <!-- Popup Menu Text Color styles -->
     <style name="TextAppearance">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/background</item>
     </style>
 
     <style name="myTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">

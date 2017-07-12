@@ -10,6 +10,8 @@ public class Player {
     Deck deck;
     Hand hand;
 
+
+    // let the player class keep a running total of the card values.
     int playerhand = 0;
 
 
@@ -18,6 +20,8 @@ public class Player {
         dealer = new Dealer(deck);
     }
 
+    // Return an integer here. The dealer takes a card from the deck and reveals it to the player.
+    // The playerhand value is saved and the card pic is returned.
     public int showFirstCard(){
         dealer.addCardToHand(dealer.deal());
         Card card = dealer.showFirstCard();

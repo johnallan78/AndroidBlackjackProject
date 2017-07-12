@@ -3,6 +3,9 @@ package com.example.user.blackjackandroidproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,7 +34,6 @@ public class ResultActivity extends AppCompatActivity {
     Integer player1 = 0;
     Integer player2 = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,13 +51,16 @@ public class ResultActivity extends AppCompatActivity {
         image6 = (ImageView) findViewById(R.id.card6Image);
         playerOne = new Player();
         playerTwo = new Player();
-
+        //The card drawable is an int
         int player1card1 = playerOne.showFirstCard();
         image.setImageResource(player1card1);
 
         int player1card2 = playerOne.showSecondCard();
         image2.setImageResource(player1card2);
 
+        // We want to display the player's hand total in a textView, so have to convert the
+        // playerHandValue()to a string. Make sure we are tracking the player's hand as an integer
+        // BEFORE converting.
         String hand = Integer.toString(playerOne.playerHandValue());
         player1 += playerOne.playerHandValue();
         playerOneHand.setText("Player 1 Hand: " + hand);
@@ -71,8 +76,33 @@ public class ResultActivity extends AppCompatActivity {
         playerTwoHand.setText("Player 2 Hand: " + player2Hand);
     }
 
-    public void onPlayAgainButtonClicked(View button) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_result, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_rules:
+                Intent intent = new Intent(this, RulesActivity.class);
+                this.startActivity(intent);
+                break;
+            case R.id.about:
+                Intent intentAbout = new Intent(this, AboutActivity.class);
+                this.startActivity(intentAbout);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
+    public void onPlayAgainButtonClicked(View button) {
+        // Some straight-from-the-box code from Stack. Creates a button which takes us back to the
+        // main activity.
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
@@ -85,6 +115,7 @@ public class ResultActivity extends AppCompatActivity {
 
 
         if (player1 > 16){
+            // Player cannot 'hit' if over 16
             hitButton1.setEnabled(false);
             }
         else
@@ -97,7 +128,6 @@ public class ResultActivity extends AppCompatActivity {
             String playerResult = Integer.toString(player1);
             playerOneHand.setText("Player 1 Hand: " + playerResult);
             }
-
     }
 
     public void onHitButtonClickedPlayer2(View button) {
@@ -117,9 +147,11 @@ public class ResultActivity extends AppCompatActivity {
             String playerResult = Integer.toString(player2);
             playerTwoHand.setText("Player 2 Hand: " + playerResult);
             }
+            // Seems a strange place to be instantiating a game object right at the end of a game,
+            // but I would rather call the scoring method from the game class than write the logic
+            // in this method.
             game = new Game();
             String result = game.scoreCompare(player1, player2);
             finalScore.setText(result);
-
     }
 }

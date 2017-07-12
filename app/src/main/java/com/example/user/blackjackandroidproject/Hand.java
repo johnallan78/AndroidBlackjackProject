@@ -10,7 +10,7 @@ public class Hand {
 
     ArrayList<Card> cards;
 
-
+    // This is where alot of the running of the game takes place.
     public Hand(){
         this.cards = new ArrayList<Card>();
     }
@@ -26,10 +26,5 @@ public class Hand {
     public Card showSecondCard() {
         return cards.get(1);
     }
-
-    public Card showThirdCard(){
-        return cards.get(2);
-    }
-
 
 }

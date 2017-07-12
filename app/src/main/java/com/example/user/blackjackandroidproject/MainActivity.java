@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // Simple menu inflater with two options. Code from Stack.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
@@ -56,12 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentAbout = new Intent(this, AboutActivity.class);
                 this.startActivity(intentAbout);
                 break;
+            case R.id.play_game:
+                Intent intentGame = new Intent(this, ResultActivity.class);
+                this.startActivity(intentGame);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
         return true;
     }
-
 
     public void onPlayButtonClicked(View button) {
         player1 = new Player();

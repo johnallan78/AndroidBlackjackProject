@@ -13,6 +13,7 @@ public class Deck {
 
     ArrayList<Card> cards;
 
+    // The deck is an ArrayList of cards which is populated and shuffled.
     public Deck(){
         cards = new ArrayList<Card>();
         populate();

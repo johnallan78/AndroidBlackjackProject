@@ -8,6 +8,8 @@ import static android.R.attr.name;
 
 public enum Pics {
 
+    //give each card in the deck a value and a drawable reference.
+
     ACESPADES(11, R.drawable.s1),
     TWOSPADES(2, R.drawable.s2),
     THREESPADES(3, R.drawable.s3),
@@ -63,12 +65,10 @@ public enum Pics {
     private int value;
     private  int img;
 
-
     Pics( int value, int img){
     this.value = value;
     this.img = img;
     }
-
 
     public int getPic(){
         return img;
