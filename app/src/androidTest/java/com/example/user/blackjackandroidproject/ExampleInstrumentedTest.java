@@ -24,3 +24,7 @@ public class ExampleInstrumentedTest {
         assertEquals("com.example.user.blackjackandroidproject", appContext.getPackageName());
     }
 }
+
+
+// instrumentation testing
+
