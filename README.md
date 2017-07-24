@@ -5,3 +5,4 @@ UI game of BlackJack
 Rules activity included
 
 https://user-images.githubusercontent.com/26144387/28534119-831e9118-7097-11e7-858a-242d37530767.png
+https://user-images.githubusercontent.com/26144387/28534126-86e3bd50-7097-11e7-8374-1720f3d42a4a.png
