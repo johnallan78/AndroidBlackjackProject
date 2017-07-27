@@ -57,6 +57,8 @@ public class ResultActivity extends AppCompatActivity {
 
         hitButton1.setEnabled(false);
         hitButton2.setEnabled(false);
+
+        // https://www.youtube.com/watch?v=LCLO7q2uhOs
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
 

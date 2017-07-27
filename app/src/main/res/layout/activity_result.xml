@@ -79,7 +79,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:fontFamily="serif"
-        android:text="final score"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
