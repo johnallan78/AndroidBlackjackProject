@@ -34,7 +34,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="53dp"
         android:fontFamily="serif"
-        android:text="TextView"
+        android:text="Get Ready!"
         android:textSize="18sp"
         app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintLeft_toRightOf="@+id/cardImage"
@@ -64,7 +64,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:fontFamily="serif"
-        android:text="TextView"
+        android:text="Get Ready!"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
@@ -114,7 +114,7 @@
         app:layout_constraintLeft_toRightOf="@+id/card4Image"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:srcCompat="@drawable/c1" />
+        app:srcCompat="@drawable/used" />
 
     <ImageView
         android:id="@+id/card4Image"
@@ -124,7 +124,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:srcCompat="@drawable/c1" />
+        app:srcCompat="@drawable/used" />
 
     <ImageView
         android:id="@+id/card2Image"
@@ -132,7 +132,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="11dp"
         app:layout_constraintTop_toBottomOf="@+id/player1"
-        app:srcCompat="@drawable/c1"
+        app:srcCompat="@drawable/used"
         tools:layout_editor_absoluteX="16dp" />
 
     <ImageView
@@ -140,13 +140,13 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="11dp"
-        app:layout_constraintLeft_toRightOf="@+id/card2Image"
-        app:layout_constraintTop_toBottomOf="@+id/player1"
-        app:srcCompat="@drawable/c1"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/card2Image"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/player1"
+        app:srcCompat="@drawable/used" />
 
     <ImageView
         android:id="@+id/card5Image"
