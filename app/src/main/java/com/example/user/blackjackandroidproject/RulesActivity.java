@@ -27,6 +27,8 @@ public class RulesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();

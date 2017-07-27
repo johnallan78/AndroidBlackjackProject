@@ -1,6 +1,7 @@
 package com.example.user.blackjackandroidproject;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,32 +50,65 @@ public class ResultActivity extends AppCompatActivity {
         image4 = (ImageView) findViewById(R.id.card4Image);
         image5 = (ImageView) findViewById(R.id.card5Image);
         image6 = (ImageView) findViewById(R.id.card6Image);
+        hitButton1 = (Button) findViewById(R.id.hitButton1);
+        hitButton2 = (Button) findViewById(R.id.hitButton2);
         playerOne = new Player();
         playerTwo = new Player();
-        //The card drawable is an int
-        int player1card1 = playerOne.showFirstCard();
-        image.setImageResource(player1card1);
 
-        int player1card2 = playerOne.showSecondCard();
-        image2.setImageResource(player1card2);
+        hitButton1.setEnabled(false);
+        hitButton2.setEnabled(false);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
 
-        // We want to display the player's hand total in a textView, so have to convert the
-        // playerHandValue()to a string. Make sure we are tracking the player's hand as an integer
-        // BEFORE converting.
-        String hand = Integer.toString(playerOne.playerHandValue());
-        player1 += playerOne.playerHandValue();
-        playerOneHand.setText("Player 1 Hand: " + hand);
+            @Override
+            public void run() {
 
-        int player2card1 = playerTwo.showFirstCard();
-        image3.setImageResource(player2card1);
+                //The card drawable is an int
+                int player1card1 = playerOne.showFirstCard();
+                image.setImageResource(player1card1);
 
-        int player2card2 = playerTwo.showSecondCard();
-        image4.setImageResource(player2card2);
+                int player1card2 = playerOne.showSecondCard();
+                image2.setImageResource(player1card2);
 
-        String player2Hand = Integer.toString(playerTwo.playerHandValue());
-        player2 += playerTwo.playerHandValue();
-        playerTwoHand.setText("Player 2 Hand: " + player2Hand);
+                hitButton1.setEnabled(true);
+
+                // We want to display the player's hand total in a textView, so have to convert the
+                // playerHandValue()to a string. Make sure we are tracking the player's hand as an integer
+                // BEFORE converting.
+                String hand = Integer.toString(playerOne.playerHandValue());
+                player1 += playerOne.playerHandValue();
+                playerOneHand.setText("Player 1 Hand: " + hand);
+
+            }
+        }, 2000);
+
+
+
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                int player2card1 = playerTwo.showFirstCard();
+                image3.setImageResource(player2card1);
+
+                int player2card2 = playerTwo.showSecondCard();
+                image4.setImageResource(player2card2);
+
+                hitButton2.setEnabled(true);
+
+
+                String player2Hand = Integer.toString(playerTwo.playerHandValue());
+                player2 += playerTwo.playerHandValue();
+                playerTwoHand.setText("Player 2 Hand: " + player2Hand);
+
+            }
+        }, 4000);
+
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,7 +144,7 @@ public class ResultActivity extends AppCompatActivity {
 
     public void onHitButtonClickedPlayer1(View button) {
 
-        hitButton1 = (Button) findViewById(R.id.hitButton1);
+
         playerOne = new Player();
 
 
